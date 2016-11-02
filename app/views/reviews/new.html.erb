@@ -1,0 +1,23 @@
+
+</div>
+
+<h1 class="text-center"><%= @restaurant.name.upcase %> " %></h1>
+<hr>
+<div class="banner">
+  <div class="banner-content">
+    <div class="padding">
+
+      <h1>New reviews</h1>
+
+      <%= simple_form_for [@restaurant, @review] do |f| %>
+
+      <%= f.input :content, placeholder: "review", input_html: {class: "black"} %>
+
+      <%= f.input :rating, placeholder: "0 - 5", input_html: {class: "black"}, :collection => [0, 1, 2, 3, 4, 5] %>
+
+      <%= f.button :submit, label: "Add a new review", class: "btn btn-primary" %>
+      <% end %>
+    </div>
+  </div>
+
+
